@@ -1,6 +1,8 @@
 package dev.nomadblacky.scalafullstackwebapplication.infra
 
 import software.amazon.awscdk.core.{App, Construct, Stack}
+import software.amazon.awscdk.services.ec2.{Vpc, VpcProps}
+import software.amazon.awscdk.services.ecs.{Cluster, ClusterProps}
 
 object CDKMain {
   def main(args: Array[String]): Unit = {
@@ -13,5 +15,5 @@ object CDKMain {
 }
 
 class WebAppStack(scope: Construct, name: String) extends Stack(scope, name) {
-  // TODO
+  val vpc = new Vpc(this, "Vpc", VpcProps.builder().maxAzs(1).build())
 }

@@ -1,5 +1,9 @@
 import sbtcrossproject.{crossProject, CrossType}
 
+val versions = new {
+  val cdk = "1.19.0"
+}
+
 lazy val server = (project in file("server"))
   .settings(commonSettings)
   .settings(
@@ -38,7 +42,10 @@ lazy val sharedJs  = shared.js
 lazy val infra = (project in file("infra"))
   .settings(commonSettings)
   .settings(
-    libraryDependencies ++= Seq("software.amazon.awscdk" % "ec2" % "1.19.0")
+    libraryDependencies ++= Seq(
+        "software.amazon.awscdk" % "ec2"          % versions.cdk,
+        "software.amazon.awscdk" % "ecs-patterns" % versions.cdk
+      )
   )
 
 lazy val commonSettings =
