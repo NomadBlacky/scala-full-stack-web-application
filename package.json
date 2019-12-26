@@ -1,0 +1,16 @@
+{
+  "name": "scala-full-stack-web-application",
+  "version": "1.0.0",
+  "description": "scala-full-stack-web-application",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NomadBlacky/scala-full-stack-web-application.git"
+  },
+  "author": "NomadBlacky",
+  "bugs": {
+    "url": "https://github.com/NomadBlacky/scala-full-stack-web-application/issues"
+  },
+  "dependencies": {
+    "aws-cdk": "^1.19.0"
+  }
+}
