@@ -16,4 +16,6 @@ object CDKMain {
 
 class WebAppStack(scope: Construct, name: String) extends Stack(scope, name) {
   val vpc = new Vpc(this, "Vpc", VpcProps.builder().maxAzs(1).build())
+
+  val cluster = new Cluster(this, "Cluster", ClusterProps.builder().vpc(vpc).build())
 }
